@@ -1,20 +1,20 @@
 import Job from './Job';
-import { useState } from 'react'
+// import { useState } from 'react'
 
-function Feed({jobsListData}) {
-  let [JobsList, setJobsList] = useState(jobsListData)
+function Feed({ jobsList , setjobsList}) {
   
   const handleClick = (id) => {
-    setJobsList((prevJobsList)=>
+    setjobsList((prevJobsList)=>
       prevJobsList.map((job)=>(
         job.id === id ? {...job , isBookmarked : !job.isBookmarked} : job
       ))
     )
+    
   }
   return (
     <div>
         {
-            JobsList.map((job)=>(               
+            jobsList.map((job)=>(               
                 <Job key={job.id} title={job.title} company={job.company} model={job.model} time={job.time} salary={job.salaryRange} description={job.description} isBookmarked={job.isBookmarked} handleClick={()=>handleClick(job.id)}/>                           
             )               
             )

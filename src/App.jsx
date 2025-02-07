@@ -2,10 +2,11 @@ import NavBar from './components/NavBar'
 import SearchBar from './components/SearchBar'
 import Feed from './components/Feed'
 import SavedJobs from './components/SavedJobs'
+import { useState } from 'react'
 
 function App() {
 
-  let jobsListData = [
+  let [jobsList, setjobsList] = useState([
     {
      id: 1,
      title: "Product Design",
@@ -38,7 +39,7 @@ function App() {
      description: "Design intuitive and visually appealing user interfaces for web and mobile applications. Conduct user research and create wireframes, prototypes, and mockups to improve user experience. Work closely with developers to implement designs."
     
     },
- ]
+ ])
  
 
   return (
@@ -51,8 +52,8 @@ function App() {
           filter
         </div>
         
-        <Feed  jobsListData={jobsListData}/>  
-        <SavedJobs company={"Google"} model={"Remote"} salary={"$200 - $1200"}/>
+        <Feed  jobsList={jobsList} setjobsList={setjobsList}/>  
+        <SavedJobs jobsList={jobsList} setjobsList={setjobsList} />
       </div>
       
       
