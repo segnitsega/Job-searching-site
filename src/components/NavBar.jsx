@@ -1,7 +1,7 @@
 
 function NavBar() {
   return (
-    <div className="flex justify-between py-4 px-16 shadow-lg w-full">
+    <div className="flex justify-between py-4 px-16 shadow-md w-full">
       <div>
         <img src="./favicon.svg" alt="logo" className=''/>
       </div>
