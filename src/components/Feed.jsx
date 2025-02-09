@@ -6,7 +6,7 @@ function Feed({ jobsList , setjobsList}) {
   const handleClick = (id) => {
     setjobsList((prevJobsList)=>
       prevJobsList.map((job)=>(
-        job.id === id ? {...job , isBookmarked : !job.isBookmarked} : job
+        job.id === id ? {...job , isBookMarked : !job.isBookMarked} : job
       ))
     )
     
@@ -15,7 +15,7 @@ function Feed({ jobsList , setjobsList}) {
     <div>
         {
             jobsList.map((job)=>(               
-                <Job key={job.id} title={job.title} company={job.company} model={job.model} time={job.time} salary={job.salaryRange} description={job.description} isBookmarked={job.isBookmarked} handleClick={()=>handleClick(job.id)}/>                           
+                <Job key={job.id} title={job.title} company={job.company} type={job.type} salary={job.salary} description={job.description} isBookMarked={job.isBookMarked} handleClick={()=>handleClick(job.id)}/>                           
             )               
             )
         }

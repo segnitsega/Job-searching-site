@@ -6,7 +6,7 @@ function SavedJobs({jobsList, setjobsList}) {
     const handleClick = (id) =>(
         setjobsList((prevJobsList)=>
           prevJobsList.map((job)=>(
-            job.id === id ? {...job , isBookmarked : !job.isBookmarked} : job
+            job.id === id ? {...job , isBookMarked : !job.isBookMarked} : job
           ))
         )
     )
@@ -17,13 +17,13 @@ function SavedJobs({jobsList, setjobsList}) {
      
         {
                 jobsList.map((job, index)=>(
-                    job.isBookmarked && 
+                    job.isBookMarked && 
                     <div key={index} className='flex flex-col items-center w-[280px] border border-gray-200 shadow-lg shadow-gray-300 rounded-2xl p-4 mb-4'> 
                     <div  className="flex gap-20 p-2 ">  
                         <div >
-                            <h2>{job.title}</h2>
-                            <p>{job.model}</p>
-                            <p>{job.salaryRange}</p>  
+                            <h2>{job.type}</h2>
+                            {/* <p>{job.model}</p> */}
+                            <p>{job.salary}</p>  
                         </div>
                         <div className="">
                             <IoCloseOutline size={20} onClick={() => handleClick(job.id)}/>  

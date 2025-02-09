@@ -2,7 +2,7 @@ import { CiBookmark, CiShare2 } from "react-icons/ci";
 import { FaBookmark } from "react-icons/fa";
 import logo from '../assets/dummyLogo.svg'
 
-const Job = ({ title, company, salary, model, time, description, isBookmarked, handleClick}) => {
+const Job = ({ title, company, salary, type, description, isBookMarked, handleClick}) => {
 
    
   return (
@@ -16,15 +16,15 @@ const Job = ({ title, company, salary, model, time, description, isBookmarked, h
                 <h1>{title}</h1>
                 <div className='flex gap-2'>
                     {
-                        isBookmarked ? <FaBookmark size={32} onClick={handleClick}/> : <CiBookmark size={32} onClick={handleClick}/> 
+                        isBookMarked ? <FaBookmark size={32} onClick={handleClick}/> : <CiBookmark size={32} onClick={handleClick}/> 
                     }                  
                     <CiShare2 size={32}/>
                 </div>
             </div>
             <p>{company}</p>
             <div className='flex gap-4'>
-                <p>{model}</p>
-                <p>{time}</p>
+                {/* <p>{model}</p> */}
+                <p>{type}</p>
                 <p>{salary}</p>
             </div>
             <p>{description}</p>
