@@ -3,6 +3,7 @@ import SearchBar from './components/SearchBar'
 import Feed from './components/Feed'
 import SavedJobs from './components/SavedJobs'
 import { useState } from 'react'
+import Filter from './components/Filter'
 
 function App() {
 
@@ -47,11 +48,9 @@ function App() {
       <NavBar />
       <SearchBar />
 
-      <div className='flex mt-4 gap-4'>
-        <div className='w-[361px] bg-sky-500'>
-          filter
-        </div>
+      <div className='flex mx-4 mt-4 gap-4'>
         
+        <Filter />       
         <Feed  jobsList={jobsList} setjobsList={setjobsList}/>  
         <SavedJobs jobsList={jobsList} setjobsList={setjobsList} />
       </div>
