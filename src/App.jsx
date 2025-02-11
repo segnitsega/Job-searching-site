@@ -8,10 +8,11 @@ import Pagination from './components/Pagination'
 
 function App() {
 
-
+let [pages, setPages] = useState(1)
 let [jobsList, setjobsList] = useState([])
  
-const apiUrl = "https://joblisting-rd8f.onrender.com/api/jobs?company=&search=&page=1&limit=50"
+const apiUrl = `https://joblisting-rd8f.onrender.com/api/jobs?company=&search=&page=${pages}&limit=5`
+
 
   useEffect(()=>{
     const fetchData = async()=>{
@@ -26,7 +27,7 @@ const apiUrl = "https://joblisting-rd8f.onrender.com/api/jobs?company=&search=&p
     }
     };
     fetchData()
-  }, [])
+  }, [pages])
 
   return (
     <div className=''>
@@ -39,7 +40,7 @@ const apiUrl = "https://joblisting-rd8f.onrender.com/api/jobs?company=&search=&p
         <Feed  jobsList={jobsList} setjobsList={setjobsList}/>  
         <SavedJobs jobsList={jobsList} setjobsList={setjobsList} />
       </div>
-      <Pagination />
+      <Pagination setPages={setPages} pages={pages}/>
       
     </div>
   )
