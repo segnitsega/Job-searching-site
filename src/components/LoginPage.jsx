@@ -9,11 +9,11 @@ import pass from '../assets/pass.svg'
 
 const LoginPage = () => {
   return (
-    <div className='flex'>
+    <div className='flex h-fit'>
         <div className='h-screen'>
             <img src={loginLogo} alt="loginLogo" className='h-full'/>
         </div>
-        <div className='ml-[100px] mt-[50px] w-[466px] h-[702.28px] flex flex-col gap-8'>
+        <div className='ml-[100px] mt-[50px] w-[466px] flex h-fit flex-col gap-8'>
             <img src='favicon.svg' alt="" className=' w-[158px] h-[61.28px]'/>
             <h1 className='text-[36px]'>Login in to your account</h1>
 
