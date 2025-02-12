@@ -6,7 +6,7 @@ const Job = ({ logo, title, company, salary, type, description, isBookMarked, ha
 
    
   return (
-    <div className='flex w-[628px] mb-4 gap-4 p-4 shadow-lg shadow-gray-300 border border-gray-200  rounded-2xl '>
+    <div className='flex w-[600px] mb-4 gap-4 p-4 shadow-md shadow-gray-300 border border-gray-200  rounded-2xl '>
         <div>
             <img src={logo} alt="logo" width='53px' height='53px'/>        
         </div>

@@ -1,5 +1,4 @@
 import Job from './Job';
-// import { useState } from 'react'
 
 function Feed({ jobsList , setjobsList}) {
   

@@ -36,7 +36,7 @@ const apiUrl = `https://joblisting-rd8f.onrender.com/api/jobs?company=&search=${
       <NavBar />
       <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} location={location} setLocation={setLocation}/>
 
-      <div className='flex mx-4 mt-4 gap-4'>
+      <div className='flex justify-around'>
         
         <Filter />       
         <Feed  jobsList={jobsList} setjobsList={setjobsList}/>  

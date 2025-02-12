@@ -12,13 +12,13 @@ function SavedJobs({jobsList, setjobsList}) {
     )
     
   return (
-    <div className="inline-flex flex-col h-fit items-center w-[270px] shadow-lg shadow-gray-300 border border-gray-200  rounded-2xl ">
-      <h1 className="text-[32px]">Saved Jobs</h1>
+    <div className="inline-flex flex-col h-fit items-center w-[270px] shadow-sm shadow-gray-300 border border-gray-200  rounded-2xl ">
+      <h1 className="text-[32px] mb-2">Saved Jobs</h1>
      
         {
                 jobsList.map((job, index)=>(
                     job.isBookMarked && 
-                    <div key={index} className='flex flex-col w-[230px] border border-gray-200 shadow-lg shadow-gray-300 rounded-2xl p-2 mb-4'> 
+                    <div key={index} className='flex flex-col w-[230px] border border-gray-200 shadow-md shadow-gray-300 rounded-2xl p-2 my-2'> 
                       <div  className="flex justify-between p-1 ">  
                           <div className="ml -4">
                             <h1 className="text-[20px]">{job.title}</h1>
