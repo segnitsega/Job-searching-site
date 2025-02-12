@@ -5,8 +5,8 @@ const SearchBar = ({searchTerm, setSearchTerm, location, setLocation}) => {
 
     // }
   return (
-    <div className='flex justify-center mt-8'>
-        <div className="flex items-center justify-center border shadow-lg border-none p-2 rounded-full w-[627px]">
+    <div className='flex justify-center mt-4 mb-8'>
+        <div className="flex items-center justify-center border shadow-md border-none p-2 rounded-full w-[627px]">
             <FaSearch className="text-gray-500" />
             <input
                 type="text"
