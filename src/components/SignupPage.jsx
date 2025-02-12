@@ -6,6 +6,7 @@ import appleLogo from '../assets/appleLogo.svg'
 import facebookLogo from '../assets/facebookLogo.svg'
 import googleLogo from '../assets/googleLogo.svg'
 import linkedInLogo from '../assets/linkedInLogo.svg'
+import { Link } from 'react-router-dom'
 
 function SignupPage() {
   return (
@@ -34,7 +35,7 @@ function SignupPage() {
                 <input type="password" placeholder='Confirm password' className='outline-none'/>
             </div>
 
-            <button className='bg-[#0034D1] p-4 rounded-md text-[#ffff]'>Create account</button>
+            <button className='bg-[#0034D1] p-4 rounded-md text-[#ffff]'><Link to="/login">Create account</Link></button>
 
 
             
@@ -51,7 +52,7 @@ function SignupPage() {
                         </div>
             <div className='flex'>
               <p >Already have an account?</p>
-              <a href="#" className='text-[#0034D1]'>Login</a>
+              <a href="#" className='text-[#0034D1]'><Link to='/login'>Login</Link></a>
             </div>
 
             
