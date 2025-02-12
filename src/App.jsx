@@ -7,11 +7,12 @@ import Filter from './components/Filter'
 import Pagination from './components/Pagination'
 
 function App() {
-
-let [pages, setPages] = useState(1)
-let [jobsList, setjobsList] = useState([])
+const [searchTerm, setSearchTerm] = useState("")
+const [location, setLocation] = useState("")
+const [pages, setPages] = useState(1)
+const [jobsList, setjobsList] = useState([])
  
-const apiUrl = `https://joblisting-rd8f.onrender.com/api/jobs?company=&search=&page=${pages}&limit=5`
+const apiUrl = `https://joblisting-rd8f.onrender.com/api/jobs?company=&search=${searchTerm}&location=${location}&page=${pages}&limit=5`
 
 
   useEffect(()=>{
@@ -27,12 +28,12 @@ const apiUrl = `https://joblisting-rd8f.onrender.com/api/jobs?company=&search=&p
     }
     };
     fetchData()
-  }, [pages])
+  }, [pages, searchTerm, location])
 
   return (
     <div className=''>
       <NavBar />
-      <SearchBar />
+      <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} location={location} setLocation={setLocation}/>
 
       <div className='flex mx-4 mt-4 gap-4'>
         
