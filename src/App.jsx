@@ -5,6 +5,7 @@ import SavedJobs from './components/SavedJobs'
 import { useEffect, useState } from 'react'
 import Filter from './components/Filter'
 import Pagination from './components/Pagination'
+import LoginPage from './components/LoginPage'
 
 function App() {
 const [searchTerm, setSearchTerm] = useState("")
@@ -32,7 +33,7 @@ const apiUrl = `https://joblisting-rd8f.onrender.com/api/jobs?company=&search=${
 
   return (
     <div className=''>
-      <NavBar />
+      {/* <NavBar />
       <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} location={location} setLocation={setLocation}/>
 
       <div className='flex mx-4 mt-4 gap-4'>
@@ -42,7 +43,8 @@ const apiUrl = `https://joblisting-rd8f.onrender.com/api/jobs?company=&search=${
         <SavedJobs jobsList={jobsList} setjobsList={setjobsList} />
       </div>
       <Pagination setPages={setPages} pages={pages}/>
-      
+       */}
+       <LoginPage />
     </div>
   )
 }
