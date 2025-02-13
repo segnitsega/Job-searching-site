@@ -10,8 +10,8 @@ import { Link } from 'react-router-dom'
 
 function SignupPage() {
   return (
-    <div className='flex ml-[200px] justify-between'>
-        <div className='flex flex-col w-[466px] gap-4 my-8'>
+    <div className='flex ml-[200px] justify-between h-screen'>
+        <div className='flex flex-col w-[466px]  gap-4 my-8 p-4'>
             <img src="favicon.svg" width="148px" height="51px" alt="" />
             <h1 className='text-[36px]'>Create your account</h1>
             <div className='flex gap-2 border border-gray-300 p-2 rounded-md w-full'>
@@ -52,12 +52,12 @@ function SignupPage() {
                         </div>
             <div className='flex'>
               <p >Already have an account?</p>
-              <a href="#" className='text-[#0034D1]'><Link to='/login'>Login</Link></a>
+              <Link to='/login' className='text-[#0034D1]'>Login</Link>
             </div>
 
             
         </div>
-        <div className='h-screen'>
+        <div className='h-fit'>
             <img src={signupLogo} alt="" className='h-full'/>
         </div>
     </div>
