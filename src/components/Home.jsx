@@ -10,42 +10,44 @@ import Pagination from './Pagination'
 
 
 function Home() {
-const [searchTerm, setSearchTerm] = useState("")
-const [location, setLocation] = useState("")
-const [pages, setPages] = useState(1)
-const [jobsList, setjobsList] = useState([])
- 
-const apiUrl = `https://joblisting-rd8f.onrender.com/api/jobs?company=&search=${searchTerm}&location=${location}&page=${pages}&limit=5`
+  const [jobsList, setjobsList] = useState([])
+  const [jobs, setJobs] = useState([])
+  const [loading, setLoading] = useState(true)
+  const apiUrl = `https://joblisting-rd8f.onrender.com/api/jobs?company=&search=&location=&page=1&limit=50`
 
-
+  // Sending request to the api
   useEffect(()=>{
     const fetchData = async()=>{
-      try{
+      try{    
           const response = await fetch(apiUrl)
           if(!response.ok) throw new Error("Failed to fetch data")
           const data = await response.json()
-        //   console.log(data)
+        
           setjobsList(data.jobs)
+          setJobs(data.jobs.slice(0, 5))
+
       }catch(error){
         console.log(error)
+    }finally{
+      setLoading(false)
     }
     };
     fetchData()
-  }, [pages, searchTerm, location])
-
-  return (
+  }, [])
   
+if(!loading) return (
+    
     <div className=''>
       <NavBar />
-      <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} location={location} setLocation={setLocation}/>
+      <SearchBar jobs={jobs} setjobs={setJobs} jobsList={jobsList}/>
 
       <div className='flex justify-around'>
         
         <Filter />       
-        <Feed  jobsList={jobsList} setjobsList={setjobsList}/>  
-        <SavedJobs jobsList={jobsList} setjobsList={setjobsList} />
+        <Feed  jobsList={jobs} setjobsList={setJobs}/>  
+        <SavedJobs jobsList={jobs} setjobsList={setJobs} />
       </div>
-      <Pagination setPages={setPages} pages={pages}/> 
+      <Pagination jobsList={jobsList} jobs={jobs} setJobs={setJobs}/> 
     </div>
   )
 }
