@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom'
 function SignupPage() {
   return (
     <div className='flex ml-[200px] justify-between h-screen'>
-        <div className='flex flex-col w-[466px]  gap-4 my-8 p-4'>
+        <div className='flex flex-col w-[466px]  gap-4 my-4 p-4'>
             <img src="favicon.svg" width="148px" height="51px" alt="" />
             <h1 className='text-[36px]'>Create your account</h1>
             <div className='flex gap-2 border border-gray-300 p-2 rounded-md w-full'>
@@ -36,20 +36,17 @@ function SignupPage() {
             </div>
 
             <button className='bg-[#0034D1] p-4 rounded-md text-[#ffff]'><Link to="/login">Create account</Link></button>
-
-
-            
-                        <div className='flex items-center gap-1'>
-                          <div className='border-t border-gray-300 w-[220px]'></div>
-                          <p>OR</p>
-                          <div className='border-t border-gray-300 w-[220px]'></div>
-                        </div>
-                        <div className='flex justify-between'>
-                          <img src={googleLogo} alt="" />
-                          <img src={appleLogo} alt="" />
-                          <img src={facebookLogo} alt="" />
-                          <img src={linkedInLogo} alt="" />
-                        </div>
+            <div className='flex items-center gap-1'>
+                <div className='border-t border-gray-300 w-[220px]'></div>
+                <p>OR</p>
+                <div className='border-t border-gray-300 w-[220px]'></div>
+                </div>
+                <div className='flex justify-between'>
+                <img src={googleLogo} alt="" />
+                <img src={appleLogo} alt="" />
+                <img src={facebookLogo} alt="" />
+                <img src={linkedInLogo} alt="" />
+            </div>
             <div className='flex'>
               <p >Already have an account?</p>
               <Link to='/login' className='text-[#0034D1]'>Login</Link>

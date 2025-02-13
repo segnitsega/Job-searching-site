@@ -43,7 +43,7 @@ const LoginPage = () => {
             </div>
             <div className='flex'>
               <p>Don't have an account?</p>
-              <Link to="/">Create an account</Link>
+              <Link to="/" className='text-[#0034D1]'>Create an account</Link>
             </div>
 
         </div>
