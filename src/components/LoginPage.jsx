@@ -28,7 +28,7 @@ const LoginPage = () => {
                  <input type="password" placeholder='Password' className='outline-none'/>
               </div>
               
-              <button className='bg-[#0034D1] text-white p-2 rounded-md'><Link to="/home">Login</Link></button>
+              <button className='bg-[#0034D1] text-white p-2 rounded-md'><Link to="/">Login</Link></button>
             </form>
             <div className='flex items-center gap-1'>
               <div className='border-t border-gray-300 w-[220px]'></div>
@@ -43,7 +43,7 @@ const LoginPage = () => {
             </div>
             <div className='flex'>
               <p>Don't have an account?</p>
-              <Link to="/" className='text-[#0034D1]'>Create an account</Link>
+              <Link to="/signup" className='text-[#0034D1]'>Create an account</Link>
             </div>
 
         </div>
