@@ -13,7 +13,9 @@ const Filter = ({jobs, setjobs, jobsList}) => {
     const [levelOpen, setIslevelOpen] = useState(false)
     const [store, setStore] = useState(jobs)
 
-    const handleCheck = (e, option) => {
+
+// filter by checkBox
+    const handleCheckboxSearch = (e, option) => {
         if(e.target.checked){
             checked.push(option)
         }
@@ -30,18 +32,25 @@ const Filter = ({jobs, setjobs, jobsList}) => {
         setjobs(filtered) 
     }
 
-    const handleLocationSearch = (e) => {
+    // filter by Location
+    const handleLocationSearch = (e, element) => {
         let search = e.target.value.toLowerCase()
         if(search.length == 0){
             setjobs(store)
             return
         }
         let filtered = jobsList.filter((job)=>job.location.toLowerCase().includes(search))
+        if(filtered.length === 0){
+            element.textContent = "Please Enter a valid city or country"
+            setjobs(store)
+            return
+        }
+        element.textContent = ""
         setjobs(filtered)
         
     }
 
-    
+    // filter by Experience Level
     const handleExperienceSearch = (e) => {
         let search = e.target.textContent.toLowerCase()
         if(search.length == 0){
@@ -103,7 +112,7 @@ const Filter = ({jobs, setjobs, jobsList}) => {
                 <div className="mt-2 border border-gray-300 rounded-lg p-2 ">
                     {["Full-time", "Hybrid", "Remote", "Internship", "Contract", "Volunteer"].map((option, index) => (
                         <label key={index} className="flex items-center space-x-2">
-                            <input type="checkbox" className="w-4 h-4" onClick={(e)=>handleCheck(e, option)}/>
+                            <input type="checkbox" className="w-4 h-4" onClick={(e)=>handleCheckboxSearch(e, option)}/>
                             <p>{option}</p>
                         </label> 
                     ))} 
@@ -113,9 +122,10 @@ const Filter = ({jobs, setjobs, jobsList}) => {
 
                 <div className="flex flex-col">
                         <label className="text-[20px]">Location</label>
+                        <p className="text-red-500" id="sendElement"></p>
                         <div className="flex items-center gap-1 border border-gray-300 p-2 rounded-md mb-2"> 
                             <FaMapMarkerAlt className="text-gray-500 " />
-                            <input type="text" placeholder="Enter your location" className="outline-none" onChange={handleLocationSearch}/>
+                            <input type="text" placeholder="Enter your location" className="outline-none" onChange={(e)=>handleLocationSearch(e, document.getElementById("sendElement"))}/>
                         </div>
                             
                         <div className="mb-4 ">
