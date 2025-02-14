@@ -69,7 +69,7 @@ JOBSPHERE was developed during an **engaging bootcamp**, where I deepened my ski
 Let's talk about code, jobs, and innovation!
 📧 **Email:** segnitsega6@gmail.com  
 💼 **LinkedIn:** [segni-tsega](https://linkedin.com/in//segni-tsega)  
-🐦 **Twitter:** [segnitsega6](https://twitter.com/@segnitsega6)  
+🐦 **Twitter:** [segnitsega6](https://twitter.com/segnitsega6)  
 
 ---
 
