@@ -2,8 +2,8 @@
 import { useState } from "react";
 import { IoIosArrowDown, IoIosArrowUp   } from "react-icons/io";
 import { FaMapMarkerAlt } from "react-icons/fa";
-
-const Filter = () => {
+let checked = []
+const Filter = ({jobs, setjobs, jobsList}) => {
     const [selectedValue, setSelectedValue] = useState("Last 24 Hours");
     const options = ["Last Hour", "Last Week", "Last Month", "Last Year"];
     const [isopen, setIsopen] = useState(false)
@@ -12,10 +12,36 @@ const Filter = () => {
     const levels = ["Junior","Intermediate","Senior"]
     const [levelOpen, setIslevelOpen] = useState(false)
 
+
+    
+    let [store, setStore] = useState(jobs)
+    
+
+    
+    const handleCheck = (e, option) => {
+        
+        if(e.target.checked){
+            checked.push(option)
+        }
+        else{
+            checked = checked.filter(item => item !== option)
+        }
+        if(checked.length === 0){
+            setjobs(store)
+        }
+
+        let filtered = jobsList.filter((job) => checked.some(typ => job.type.toLowerCase().includes(typ.toLowerCase())))
+
+        setjobs(filtered)
+        
+        
+
+       
+    }
+
   return (
     <div className="flex flex-col h-fit w-[300px] shadow-md shadow-gray-300 border border-gray-200  rounded-2xl ">
         <h1 className="text-[32px] text-center">Filter</h1>
-        
 
         <div className=" w-64 m-4">
 
@@ -47,6 +73,7 @@ const Filter = () => {
                         <li
                             key={index}
                             className="p-2 hover:bg-gray-200 cursor-pointer"
+                            
                             onClick={() => {setSelectedValue(option); setIsopen(false)}}
                         >
                             {option}
@@ -60,12 +87,12 @@ const Filter = () => {
             <div>
                 <p className="text-[20px]">Job Type</p>
                 <div className="mt-2 border border-gray-300 rounded-lg p-2 ">
-                    {["Full-time", "Part-time", "Internship", "Contract", "Volunteer"].map((option, index) => (
+                    {["Full-time", "Hybrid", "Remote", "Internship", "Contract", "Volunteer"].map((option, index) => (
                         <label key={index} className="flex items-center space-x-2">
-                            <input type="checkbox" className="w-4 h-4" />
+                            <input type="checkbox" className="w-4 h-4" onClick={(e)=>handleCheck(e, option)}/>
                             <p>{option}</p>
-                        </label>
-                    ))}
+                        </label> 
+                    ))} 
                 </div>                        
                
             </div>

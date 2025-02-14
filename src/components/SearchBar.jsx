@@ -1,14 +1,14 @@
 import { FaSearch, FaMapMarkerAlt } from 'react-icons/fa';
 import { useState } from 'react';
 const SearchBar = ({jobs, setjobs, jobsList}) => {
+    // console.log(typeof(setJobs))
     const [toSearch, setToSearch] = useState(jobsList)
     const [store, setStore] = useState(jobs)
-
         const handleSearch = (e) => {
             let search = e.target.value.toLowerCase()
             if(search.length == 0){
                 setjobs(store)
-                return
+                return 
             }
             let filtered = toSearch.filter((job)=> job.title.toLowerCase().includes(search) || job.description.toLowerCase().includes(search) || job.company.toLowerCase().includes(search))
             setjobs(filtered) 

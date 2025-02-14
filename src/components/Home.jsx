@@ -34,8 +34,11 @@ function Home() {
     };
     fetchData()
   }, [])
+//  console.log(jobs)
+
   
 if(!loading) return (
+
     
     <div className=''>
       <NavBar />
@@ -43,7 +46,7 @@ if(!loading) return (
 
       <div className='flex justify-around'>
         
-        <Filter />       
+        <Filter jobs={jobs} setjobs={setJobs} jobsList={jobsList}/>       
         <Feed  jobsList={jobs} setjobsList={setJobs}/>  
         <SavedJobs jobsList={jobs} setjobsList={setJobs} />
       </div>
