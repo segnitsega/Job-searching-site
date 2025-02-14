@@ -34,7 +34,6 @@ function Home() {
     };
     fetchData()
   }, [])
-//  console.log(jobs)
 
   
 if(!loading) return (

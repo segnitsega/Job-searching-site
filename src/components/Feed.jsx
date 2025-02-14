@@ -15,7 +15,8 @@ function Feed({ jobsList , setjobsList}) {
     <div>
         {
             
-            jobsList.map((job)=>(               
+            jobsList.map((job)=>(
+                            
                 <Job key={job.id} logo={job.logo} title={job.title} company={job.company} type={job.type} salary={job.salary} description={job.description} isBookMarked={job.isBookMarked} handleClick={()=>handleClick(job.id)}/>                           
             )               
             )

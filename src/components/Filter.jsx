@@ -8,18 +8,12 @@ const Filter = ({jobs, setjobs, jobsList}) => {
     const options = ["Last Hour", "Last Week", "Last Month", "Last Year"];
     const [isopen, setIsopen] = useState(false)
 
-    const [level, setLevel] = useState("Intermediate")
-    const levels = ["Junior","Intermediate","Senior"]
+    const [level, setLevel] = useState("Mid Level")
+    const levels = ["Entry Level","Mid Level","Senior Level"]
     const [levelOpen, setIslevelOpen] = useState(false)
+    const [store, setStore] = useState(jobs)
 
-
-    
-    let [store, setStore] = useState(jobs)
-    
-
-    
     const handleCheck = (e, option) => {
-        
         if(e.target.checked){
             checked.push(option)
         }
@@ -28,15 +22,35 @@ const Filter = ({jobs, setjobs, jobsList}) => {
         }
         if(checked.length === 0){
             setjobs(store)
-        }
-
+            return 
+            
+        } 
         let filtered = jobsList.filter((job) => checked.some(typ => job.type.toLowerCase().includes(typ.toLowerCase())))
 
+        setjobs(filtered) 
+    }
+
+    const handleLocationSearch = (e) => {
+        let search = e.target.value.toLowerCase()
+        if(search.length == 0){
+            setjobs(store)
+            return
+        }
+        let filtered = jobsList.filter((job)=>job.location.toLowerCase().includes(search))
         setjobs(filtered)
         
-        
+    }
 
-       
+    
+    const handleExperienceSearch = (e) => {
+        let search = e.target.textContent.toLowerCase()
+        if(search.length == 0){
+            setjobs(store)
+            return
+        }
+        let filtered = jobsList.filter((job)=>job.experienceLevel.toLowerCase().includes(search))
+        setjobs(filtered)
+        
     }
 
   return (
@@ -101,14 +115,11 @@ const Filter = ({jobs, setjobs, jobsList}) => {
                         <label className="text-[20px]">Location</label>
                         <div className="flex items-center gap-1 border border-gray-300 p-2 rounded-md mb-2"> 
                             <FaMapMarkerAlt className="text-gray-500 " />
-                            <input type="text" placeholder="Enter your location" className="outline-none"/>
+                            <input type="text" placeholder="Enter your location" className="outline-none" onChange={handleLocationSearch}/>
                         </div>
                             
                         <div className="mb-4 ">
                         <p className="text-[20px]">Experience Level</p>
-
-
-
                         <div  className="border  border-gray-200 rounded p-2 flex items-center text-gray-500">
                             <input 
                                 type="text"
@@ -130,16 +141,16 @@ const Filter = ({jobs, setjobs, jobsList}) => {
                         {
                             levelOpen && (
                                 <ul className=" w-full bg-white border border-gray-200 rounded-md mt-1">
-                                {levels.map((level, index) => (
-                                <li
-                                    key={index}
-                                    className="p-2 hover:bg-gray-200 cursor-pointer"
-                                    onClick={() => {setLevel(level); setIslevelOpen(false)}}
-                                >
-                                    {level}
-                                </li>
-                            ))}
-                        </ul>
+                                    {levels.map((level, index) => (
+                                        <li
+                                            key={index}
+                                            className="p-2 hover:bg-gray-200 cursor-pointer"
+                                            onClick={(e) => {setLevel(level); setIslevelOpen(false); handleExperienceSearch(e)}}
+                                        >
+                                            {level}
+                                        </li>
+                                    ))}
+                                </ul>
                             )
                         }
                     </div>
