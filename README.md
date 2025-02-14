@@ -1,6 +1,6 @@
 # JOBSPHERE
 
-![JobSphere Banner](./src/assets/JobSphere-Banner.jpg.png)
+![JobSphere Banner](./src/assets/JobSphere-Banner.svg)
 
 
 🚀 **Find Your Dream Job with Ease!**
@@ -68,8 +68,8 @@ JOBSPHERE was developed during an **engaging bootcamp**, where I deepened my ski
 ## 📩 Connect with Me
 Let's talk about code, jobs, and innovation!
 📧 **Email:** segnitsega6@gmail.com  
-💼 **LinkedIn:** [/segni-tsega/](https://linkedin.com/in/yourprofile)  
-🐦 **Twitter:** [@segnitsega6](https://twitter.com/yourhandle)  
+💼 **LinkedIn:** [segni-tsega](https://linkedin.com/in//segni-tsega)  
+🐦 **Twitter:** [segnitsega6](https://twitter.com/@segnitsega6)  
 
 ---
 
