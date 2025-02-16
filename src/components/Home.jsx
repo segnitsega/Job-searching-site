@@ -35,7 +35,7 @@ function Home() {
     fetchData()
   }, [])
 
-  
+     
 if(!loading) return (
 
     
