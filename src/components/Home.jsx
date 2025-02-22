@@ -22,7 +22,7 @@ function Home() {
           const response = await fetch(apiUrl)
           if(!response.ok) throw new Error("Failed to fetch data")
           const data = await response.json()
-          // console.log("Your data is here ", data)
+          console.log("Your data is here ", data)
           setjobsList(data.jobs)
           setJobs(data.jobs.slice(0, 5))
 

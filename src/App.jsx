@@ -4,6 +4,7 @@ import SignupPage from './components/SignupPage'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from './components/Home'
 import Layout from './Layout';
+import JobPost from './components/JobPost';
 
 function App() {
   
@@ -17,6 +18,7 @@ function App() {
           </Route>
       </Routes>
     </BrowserRouter>
+    // <JobPost/>
     
 
   )
