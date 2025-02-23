@@ -28,24 +28,24 @@ function Form1() {
             validationSchema={validationSchema}
         >
             {()=>(
-                <Form className='flex flex-col w-fit border border-gray-300 p-4 rounded-lg shadow gap-2'>
+                <Form className='flex flex-col  border border-gray-300 p-8 rounded-lg shadow gap-2 w-[400px]'>
                     <label>Job Title</label>
-                    <Field name='title' placeholder="Software Engineer" className='outline-none p-1 border border-gray-400 rounded-md'/>
+                    <Field name='title' placeholder="Software Engineer" className='outline-none p-2 border border-gray-400 rounded-md'/>
                     <ErrorMessage name='title' component='span' className='text-red-500'/>
 
                     <label>Job Type</label>
-                    <Field name='type' placeholder='Full Time, Part Time' className='outline-none p-1 border border-gray-400 rounded-md'/>
+                    <Field name='type' placeholder='Full Time, Part Time' className='outline-none p-2 border border-gray-400 rounded-md'/>
                     <ErrorMessage name='type' component='span' className='text-red-500'/>
 
                     <label>Job Salary</label>
-                    <Field name='salary' placeholder='1000' className='outline-none p-1 border border-gray-400 rounded-md'/>
+                    <Field name='salary' placeholder='1000' className='outline-none p-2 border border-gray-400 rounded-md'/>
                     <ErrorMessage name='salary' component='span' className='text-red-500'/>
 
                     <label>Job Description</label>
-                    <Field name='description' placeholder='Job description' className='outline-none p-1 border border-gray-400 rounded-md'/>
+                    <Field name='description' placeholder='Job description' className='outline-none p-2 border border-gray-400 rounded-md'/>
                     <ErrorMessage name='description' component='span' className='text-red-500'/>
 
-                    <button type='submit'  className='outline-none p-1 rounded-md bg-blue-500 hover:bg-blue-400 text-white'>Next</button>
+                    <button type='submit'  className='outline-none p-2 rounded-md bg-blue-500 hover:bg-blue-400 text-white'>Next</button>
                 </Form>
             )}
             

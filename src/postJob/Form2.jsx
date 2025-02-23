@@ -31,25 +31,25 @@ function Form2() {
             validationSchema={validationSchema}
         >
             {()=>(
-                <Form className='flex flex-col w-fit border border-gray-300 p-4 rounded-lg shadow gap-2'>
+                <Form className='flex flex-col  border border-gray-300 p-8 rounded-lg shadow gap-2 w-[400px]'>
                     <label>Company</label>
-                    <Field name='company' placeholder="Bloomberg, Google, CSEC" className='outline-none p-1 border border-gray-400 rounded-md'/>
+                    <Field name='company' placeholder="Bloomberg, Google, CSEC" className='outline-none p-2 border border-gray-400 rounded-md'/>
                     <ErrorMessage name='company' component='span' className='text-red-500'/>
 
                     <label>Location</label>
-                    <Field name='location' placeholder='City, or country' className='outline-none p-1 border border-gray-400 rounded-md'/>
+                    <Field name='location' placeholder='City, or country' className='outline-none p-2 border border-gray-400 rounded-md'/>
                     <ErrorMessage name='location' component='span' className='text-red-500'/>
 
                     <label>Experience</label>
-                    <Field name='experience' placeholder='Intermediate, Senior Level, Entry Level' className='outline-none p-1 border border-gray-400 rounded-md'/>
+                    <Field name='experience' placeholder='Intermediate, Senior Level, Entry Level' className='outline-none p-2 border border-gray-400 rounded-md'/>
                     <ErrorMessage name='experience' component='span' className='text-red-500'/>
 
                     <label>Currency</label>
-                    <Field name='currency' placeholder='USD, INR, GBP, Euro' className='outline-none p-1 border border-gray-400 rounded-md'/>
+                    <Field name='currency' placeholder='USD, INR, GBP, Euro' className='outline-none p-2 border border-gray-400 rounded-md'/>
                     <ErrorMessage name='currency' component='span' className='text-red-500'/>
 
-                    <button type='submit'  className='outline-none p-1 rounded-md bg-blue-500 hover:bg-blue-400 text-white'>Post</button>
-                    <button  className='outline-none p-1 rounded-md ' onClick={back}>Back</button>
+                    <button type='submit'  className='outline-none p-2 rounded-md bg-blue-500 hover:bg-blue-400 text-white'>Post</button>
+                    <button  className='border border-gray-400 hover:bg-gray-200 outline-none p-2 rounded-md ' onClick={back}>Back</button>
 
                 </Form>
             )}
