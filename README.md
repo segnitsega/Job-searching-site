@@ -54,7 +54,7 @@ JOBSPHERE is a modern **job searching web application** designed to simplify the
 ---
 
 ## 🎓 Learning Experience
-JOBSPHERE was developed during an **engaging bootcamp**, where I deepened my skills in **React, Tailwind CSS, and modern web development**. This project pushed me to explore **state management, API handling, and UI/UX best practices**.
+JOBSPHERE was developed during an **engaging bootcamp**, where I deepened my skills in **React, Tailwind CSS, and modern web development**. This project pushed me to explore **state management, API handling, Form handlind and Validation, and UI/UX best practices**.
 
 ---
 
