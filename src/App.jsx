@@ -9,16 +9,16 @@ import JobPost from './components/JobPost';
 function App() {
   
   return (
-    <BrowserRouter>
-      <Routes>
-          <Route path="/" element={<Layout />} >
-              <Route index element={<Home />} />
-              <Route path="/signup" element={<SignupPage />} />
-              <Route path="/login" element={<LoginPage />} />
-          </Route>
-      </Routes>
-    </BrowserRouter>
-    // <JobPost/>
+    // <BrowserRouter>
+    //   <Routes>
+    //       <Route path="/" element={<Layout />} >
+    //           <Route index element={<Home />} />
+    //           <Route path="/signup" element={<SignupPage />} />
+    //           <Route path="/login" element={<LoginPage />} />
+    //       </Route>
+    //   </Routes>
+    // </BrowserRouter>
+    <JobPost/>
     
 
   )
