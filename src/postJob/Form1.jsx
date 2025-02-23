@@ -12,10 +12,12 @@ function Form1() {
         next()
     }
     const validationSchema = yup.object({
-        title: yup.string().required("Please enter job title"),
-        type: yup.string().required("Please enter job type"),
-        salary: yup.string().required("Please enter salary"),
-        description: yup.string().required("please enter job description")
+        title: yup.string().trim().required("Please enter job title").matches(/^[A-Za-z\s,]+$/, "Title must not contain numbers").min(3, 'Invalid job title'),
+        type: yup.string().trim().matches(/^\s*(full[\s-]*time|part[\s-]*time)\s*$/i
+, "Invalid job type").required("Please enter job type"),
+        // salary: yup.number().typeError("Salary must be a number").positive("Salary must be a positive number").required("Please enter salary"),
+        salary: yup.string().matches(/^[0-9,]+$/, "Salary must be a valid positive number").required("Please enter salary"),
+        description: yup.string().trim().matches(/^[A-Za-z0-9\s.,!?'"()-]+$/, "Description must be a valid string").required("please enter job description").min(5, "Enter at least five descriptive letters")
         
     })
 
@@ -32,11 +34,11 @@ function Form1() {
                     <ErrorMessage name='title' component='span' className='text-red-500'/>
 
                     <label>Job Type</label>
-                    <Field name='type' placeholder='Full Time' className='outline-none p-1 border border-gray-400 rounded-md'/>
+                    <Field name='type' placeholder='Full Time, Part Time' className='outline-none p-1 border border-gray-400 rounded-md'/>
                     <ErrorMessage name='type' component='span' className='text-red-500'/>
 
                     <label>Job Salary</label>
-                    <Field name='salary' placeholder='1000USD' className='outline-none p-1 border border-gray-400 rounded-md'/>
+                    <Field name='salary' placeholder='1000' className='outline-none p-1 border border-gray-400 rounded-md'/>
                     <ErrorMessage name='salary' component='span' className='text-red-500'/>
 
                     <label>Job Description</label>
