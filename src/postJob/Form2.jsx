@@ -19,7 +19,7 @@ function Form2() {
         company: yup.string().trim().required("Please enter company name").matches(/^[A-Za-z\s,]+$/, "Company name must not contain numbers"),
         location: yup.string().trim().required("Please enter company location").matches(/^\s*[A-Za-z\s]+(?:,\s*[A-Za-z\s]+)?\s*$/, "Invalid location format"
         ),
-        experience: yup.string().trim().required("Please enter experience level").matches(/^\s*(senior|intermediate|entry|junior)\s*(level)?\s*$/i, "Enter a valid experience level"),
+        experienceLevel: yup.string().trim().required("Please enter experience level").matches(/^\s*(senior|intermediate|entry|junior)\s*(level)?\s*$/i, "Enter a valid experience level"),
         currency: yup.string().required("please enter currency").transform((value)=>value.toUpperCase()).oneOf(["USD", "Euro", "INR", "GBP"], "Currency must be one of: USD, Euro, INR, GBP")
     })
 
@@ -40,9 +40,9 @@ function Form2() {
                     <Field name='location' placeholder='City, or country' className='outline-none p-2 border border-gray-400 rounded-md'/>
                     <ErrorMessage name='location' component='span' className='text-red-500'/>
 
-                    <label>Experience</label>
-                    <Field name='experience' placeholder='Intermediate, Senior Level, Entry Level' className='outline-none p-2 border border-gray-400 rounded-md'/>
-                    <ErrorMessage name='experience' component='span' className='text-red-500'/>
+                    <label>Experience Level</label>
+                    <Field name='experienceLevel' placeholder='Intermediate, Senior Level, Entry Level' className='outline-none p-2 border border-gray-400 rounded-md'/>
+                    <ErrorMessage name='experienceLevel' component='span' className='text-red-500'/>
 
                     <label>Currency</label>
                     <Field name='currency' placeholder='USD, INR, GBP, Euro' className='outline-none p-2 border border-gray-400 rounded-md'/>

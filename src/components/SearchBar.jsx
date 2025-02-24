@@ -5,6 +5,9 @@ const SearchBar = ({jobs, setjobs, jobsList}) => {
     const [toSearch, setToSearch] = useState(jobsList)
     const [store, setStore] = useState(jobs)
 
+
+    console.log("jobs", jobs)
+    console.log("jobsList", jobsList)
     // Search by key word, country or company
         const handleSearch = (e) => {
             let search = e.target.value.toLowerCase()

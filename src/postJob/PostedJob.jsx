@@ -1,10 +1,14 @@
 import { useJobForm } from "../store/useJobForm"
 import { Link } from "react-router-dom"
 import { useStepper } from "../store/useStepper"
+import post from "./jobPost"
 
 function PostedJob() {
   const {back} = useStepper()
-    const {form1, form2, setForm1, setForm2} = useJobForm()
+  const {form1, form2, setForm1, setForm2} = useJobForm()
+ 
+  console.log(post(form1, form2))
+  // console.log(form3)
   return (
     <div className="flex flex-col w-[400px] border border-gray-300 p-8 rounded-lg shadow gap-4">
         <h1 className='text-2xl'>Job Details</h1>
@@ -23,3 +27,5 @@ function PostedJob() {
 }
 
 export default PostedJob
+
+
