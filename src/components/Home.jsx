@@ -13,7 +13,7 @@ function Home() {
   const [jobsList, setjobsList] = useState([])
   const [jobs, setJobs] = useState([])
   const [loading, setLoading] = useState(true)
-  const apiUrl = `https://joblisting-rd8f.onrender.com/api/jobs?company=&search=&location=&page=1&limit=50`
+  const apiUrl = `https://joblisting-3hjv.onrender.com/api/jobs`
 
   // Sending request to the api
   useEffect(()=>{

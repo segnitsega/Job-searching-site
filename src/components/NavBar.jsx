@@ -9,7 +9,7 @@ function NavBar() {
       </div>
       <div>
         <ul className="flex gap-10 p-4">
-            <li>Job Search</li>
+            <Link to='/jobPost'><li>Post Job</li></Link>
             <li>My Applications</li>
             <li>Companies</li>
             <li>Contact Us</li>
