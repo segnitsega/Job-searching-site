@@ -1,5 +1,6 @@
 import { create } from "zustand";
 
+
 export const useJobForm = create((set)=>({
     form1:{
         title:"",

@@ -48,7 +48,7 @@ function Form2() {
                     <Field name='currency' placeholder='USD, INR, GBP, Euro' className='outline-none p-2 border border-gray-400 rounded-md'/>
                     <ErrorMessage name='currency' component='span' className='text-red-500'/>
 
-                    <button type='submit'  className='outline-none p-2 rounded-md bg-blue-500 hover:bg-blue-400 text-white'>Post</button>
+                    <button type='submit'  className='outline-none p-2 rounded-md bg-[#0034D1] hover:bg-blue-400 text-white'>Post</button>
                     <button  className='border border-gray-400 hover:bg-gray-200 outline-none p-2 rounded-md ' onClick={back}>Back</button>
 
                 </Form>

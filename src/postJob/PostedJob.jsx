@@ -1,8 +1,9 @@
 import { useJobForm } from "../store/useJobForm"
+import { Link } from "react-router-dom"
 import { useStepper } from "../store/useStepper"
 
 function PostedJob() {
-    const{back, next} = useStepper()
+  const {back} = useStepper()
     const {form1, form2, setForm1, setForm2} = useJobForm()
   return (
     <div className="flex flex-col w-[400px] border border-gray-300 p-8 rounded-lg shadow gap-4">
@@ -15,7 +16,8 @@ function PostedJob() {
         <h2>Experince Level: {form2.experience}</h2>
         <h2>Currency: {form2.currency}</h2>
         <h2>Description: {form1.description}</h2>
-         <button className='border border-gray-400 hover:bg-gray-200 outline-none p-2 rounded-md ' onClick={back}>back</button>
+        <button className='border border-gray-400 hover:bg-gray-200 outline-none p-2 rounded-md ' onClick={back}>back</button>
+        <button className='border border-gray-400 bg-[#0034D1] hover:bg-[#0034d194] outline-none p-2 rounded-md'><Link to="/">Home</Link></button>
     </div>
   )
 }

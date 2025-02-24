@@ -6,6 +6,7 @@ import { useStepper } from '../store/useStepper'
 
 function Form1() {
     const{next} = useStepper()
+
     const{form1, setForm1} = useJobForm()
     const onSubmit = (values) => {
         setForm1(values)
@@ -45,7 +46,7 @@ function Form1() {
                     <Field name='description' placeholder='Job description' className='outline-none p-2 border border-gray-400 rounded-md'/>
                     <ErrorMessage name='description' component='span' className='text-red-500'/>
 
-                    <button type='submit'  className='outline-none p-2 rounded-md bg-blue-500 hover:bg-blue-400 text-white'>Next</button>
+                    <button type='submit'  className='outline-none p-2 rounded-md bg-[#0034D1] hover:bg-blue-400 text-white'>Next</button>
                 </Form>
             )}
             

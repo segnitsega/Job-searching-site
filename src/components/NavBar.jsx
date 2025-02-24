@@ -1,7 +1,9 @@
 
 import { Link } from "react-router-dom"
 
+
 function NavBar() {
+
   return (
     <div className="flex justify-between py-4 px-16 shadow w-full">
       <div>

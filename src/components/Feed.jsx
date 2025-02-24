@@ -1,7 +1,7 @@
 import Job from './Job';
 
 function Feed({ jobsList , setjobsList}) {
-  console.log(jobsList)
+  // console.log(jobsList)
   const handleClick = (id) => {
     setjobsList((prevJobsList)=>
       prevJobsList.map((job)=>(
