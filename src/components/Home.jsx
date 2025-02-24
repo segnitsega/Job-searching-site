@@ -6,7 +6,7 @@ import SavedJobs from './SavedJobs'
 import { useEffect, useState } from 'react'
 import Filter from './Filter'
 import Pagination from './Pagination'
-
+import Hero from './Hero'
 
 
 function Home() {
@@ -41,6 +41,7 @@ if(!loading) return (
     
     <div className=''>
       <NavBar />
+      <Hero />
       <SearchBar jobs={jobs} setjobs={setJobs} jobsList={jobsList}/>
 
       <div className='flex justify-around'>
