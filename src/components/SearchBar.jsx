@@ -43,7 +43,7 @@ const SearchBar = ({jobs, setjobs, jobsList}) => {
         <div className='relative flex justify-center mt-8 mb-12'>
         
             <div className="flex items-center justify-center border border-gray-200 shadow-md  p-2 rounded-full w-[627px]">
-                <FaSearch className="text-gray-500" />
+                <FaSearch className="text-gray-500 " />
                 <input
                     type="text"
                     placeholder="Job title, Key Words, or Company name"
@@ -58,7 +58,7 @@ const SearchBar = ({jobs, setjobs, jobsList}) => {
                     onChange={handleLocationSearch}
                 /> 
                 <button
-                    className="bg-blue-700 text-white px-8 py-2 rounded border mr-4"
+                    className="bg-blue-700 hover:bg-blue-500 cursor-pointer text-white px-8 py-2 rounded border mr-4"
                     
                 >
                     Search

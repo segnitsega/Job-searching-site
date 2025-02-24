@@ -1,7 +1,6 @@
 
 import { Link } from "react-router-dom"
 
-
 function NavBar() {
 
   return (
@@ -12,14 +11,14 @@ function NavBar() {
       <div>
         <ul className="flex gap-10 p-4">
             <Link to='/jobPost'><li>Post Job</li></Link>
-            <li>My Applications</li>
-            <li>Companies</li>
-            <li>Contact Us</li>
+            <li className="cursor-pointer">My Applications</li>
+            <li className="cursor-pointer">Companies</li>
+            <li className="cursor-pointer">Contact Us</li>
         </ul>
       </div>
         <div>
-            <button className="bg-blue-700 text-white px-8 py-2 rounded border mr-4"><Link to="/login">Login</Link></button>
-            <button className="px-8 py-2 rounded border-1 border-blue-600 "><Link to="/signup">Sign In</Link></button>
+            <button className="cursor-pointer bg-blue-700 text-white px-8 py-2 rounded border mr-4 hover:bg-blue-400"><Link to="/login">Login</Link></button>
+            <button className="cursor-pointer px-8 py-2 rounded border-1 border-blue-600 hover:bg-blue-700 hover:text-white"><Link to="/signup">Sign In</Link></button>
         </div>
       
     </div>
